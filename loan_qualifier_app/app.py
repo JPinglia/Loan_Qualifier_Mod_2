@@ -97,7 +97,16 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     bank_data_filtered = filter_debt_to_income(monthly_debt_ratio, bank_data_filtered)
     bank_data_filtered = filter_loan_to_value(loan_to_value_ratio, bank_data_filtered)
 
-    print(f"Found {len(bank_data_filtered)} qualifying loans")
+    '''*******************************************************************************'''
+    #We are checking to see how many loans qualify based on the applicant data inputs. If no loans qualify program ends.
+    number_of_qualifying_loans = len(bank_data_filtered)
+    if number_of_qualifying_loans > 0:
+        print(f"Found {number_of_qualifying_loans} qualifying loans")
+        #print(bank_data_filtered)
+    else:
+        sys.exit("No qualifying loans were found! - System Exit")
+    '''*******************************************************************************'''
+    
 
     return bank_data_filtered
 
@@ -110,6 +119,17 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
+
+    save_ask = questionary.text("Would you like to save the qualifying loan data to a csv file? Yes or No").ask()
+    if save_ask = "Yes" or save_ask = "yes" or save_ask = "y":
+        save_ask = True
+    elif save_ask = "No" or save_ask = "no" or save_ask = "n":
+        save_ask = False
+    else:
+        sys.exit("You did not answer Yes or No - Exiting System")
+
+
+
 
 
 def run():
