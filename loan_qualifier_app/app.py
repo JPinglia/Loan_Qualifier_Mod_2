@@ -6,146 +6,15 @@ This is a command line application to match applicants with qualifying loans.
 Example:
     $ python app.py
 """
-import sys
 import fire
-import questionary
-from pathlib import Path
-import csv
 
-from qualifier.utils.fileio import load_csv
+#loading loan intialization fuctions.
+from qualifier.utils.loan_initialization import load_bank_data
+from qualifier.utils.loan_initialization import get_applicant_info
+from qualifier.utils.loan_initialization import find_qualifying_loans
 
-from qualifier.utils.calculators import (
-    calculate_monthly_debt_ratio,
-    calculate_loan_to_value_ratio,
-)
-
-from qualifier.filters.max_loan_size import filter_max_loan_size
-from qualifier.filters.credit_score import filter_credit_score
-from qualifier.filters.debt_to_income import filter_debt_to_income
-from qualifier.filters.loan_to_value import filter_loan_to_value
-
-
-def load_bank_data():
-    """Ask for the file path to the latest banking data and load the CSV file.
-
-    Returns:
-        The bank data from the data rate sheet CSV file.
-    """
-
-    csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
-    csvpath = Path(csvpath)
-    if not csvpath.exists():
-        sys.exit(f"Oops! Can't find this path: {csvpath}")
-
-    return load_csv(csvpath)
-
-
-def get_applicant_info():
-    """Prompt dialog to get the applicant's financial information.
-
-    Returns:
-        Returns the applicant's financial information.
-    """
-
-    credit_score = questionary.text("What's your credit score?").ask()
-    debt = questionary.text("What's your current amount of monthly debt?").ask()
-    income = questionary.text("What's your total monthly income?").ask()
-    loan_amount = questionary.text("What's your desired loan amount?").ask()
-    home_value = questionary.text("What's your home value?").ask()
-
-    credit_score = int(credit_score)
-    debt = float(debt)
-    income = float(income)
-    loan_amount = float(loan_amount)
-    home_value = float(home_value)
-
-    return credit_score, debt, income, loan_amount, home_value
-
-
-def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_value):
-    """Determine which loans the user qualifies for.
-
-    Loan qualification criteria is based on:
-        - Credit Score
-        - Loan Size
-        - Debit to Income ratio (calculated)
-        - Loan to Value ratio (calculated)
-
-    Args:
-        bank_data (list): A list of bank data.
-        credit_score (int): The applicant's current credit score.
-        debt (float): The applicant's total monthly debt payments.
-        income (float): The applicant's total monthly income.
-        loan (float): The total loan amount applied for.
-        home_value (float): The estimated home value.
-
-    Returns:
-        A list of the banks willing to underwrite the loan.
-
-    """
-
-    # Calculate the monthly debt ratio
-    monthly_debt_ratio = calculate_monthly_debt_ratio(debt, income)
-    print(f"The monthly debt to income ratio is {monthly_debt_ratio:.02f}")
-
-    # Calculate loan to value ratio
-    loan_to_value_ratio = calculate_loan_to_value_ratio(loan, home_value)
-    print(f"The loan to value ratio is {loan_to_value_ratio:.02f}.")
-
-    # Run qualification filters
-    bank_data_filtered = filter_max_loan_size(loan, bank_data)
-    bank_data_filtered = filter_credit_score(credit_score, bank_data_filtered)
-    bank_data_filtered = filter_debt_to_income(monthly_debt_ratio, bank_data_filtered)
-    bank_data_filtered = filter_loan_to_value(loan_to_value_ratio, bank_data_filtered)
-
-    '''*******************************************************************************'''
-    #We are checking to see how many loans qualify based on the applicant data inputs. If no loans qualify program ends.
-    number_of_qualifying_loans = len(bank_data_filtered)
-    if number_of_qualifying_loans > 0:
-        print(f"Found {number_of_qualifying_loans} qualifying loans")
-        #print(bank_data_filtered)
-    else:
-        sys.exit("No qualifying loans were found! - System Exit")
-    '''*******************************************************************************'''
-    
-
-    return bank_data_filtered
-
-
-def save_qualifying_loans(qualifying_loans):
-    """Saves the qualifying loans to a CSV file.
-
-    Args:
-        qualifying_loans (list of lists): The qualifying bank loans.
-    """
-      
-    # Ask user if they would like to save the file?
-    save_ask = questionary.text("Would you like to save the qualifying loan data to a csv file? Yes or No").ask()
-    # Based on user input, yes or no, a if condition excutes as a filter.
-    if save_ask == "Yes" or save_ask == "yes":
-        save_ask = True
-        #User asked for file path as a save folder. Then the user is asked for a file name. *** File name only. Example: Qualifing_Loans
-        save_path = questionary.text("Please specify save folder path:").ask()
-        save_file_name = questionary.text("What would you like the file name to be? as a (.csv)").ask()
-        #File name and path converted into a .csv file path.
-        save_path = save_path + f"\{save_file_name}"
-        #Headers added to the csv file.
-        headers = ["Lender","Max Loan","Amount","Max LTV","Max DTI","Min Credit Score","Interest_Rate"]
-        #csv writer is used from the csv library.
-        with open(save_path, 'w', newline='') as file:
-            writer = csv.writer(file)
-            #Headers and qualifying_loans list of list are written to the csv file.
-            writer.writerow(headers)
-            writer.writerows(qualifying_loans)
-            #Message sent to user of successful save
-        sys.exit(f"File saved successfully as{save_file_name}.csv file ! - Good Bye")
-    #Conditions for if the user answers No.
-    elif save_ask == "No" or save_ask == "no":
-        save_ask = False
-        sys.exit("File was not saved.")
-    #Condition for any other input.
-    else:
-        sys.exit("You did not answer Yes or No - Exiting System")
+#loading output csv file save.
+from qualifier.utils.fileio import save_qualifying_loans
 
 
 def run():

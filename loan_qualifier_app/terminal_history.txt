@@ -1,0 +1,50 @@
+   45  python app.py
+   46  clear
+   47  coda activite dev
+   48  conda activite dev
+   49  conda activate dev
+   50  clear
+   51  python app.py
+   52  python app.py
+   53  clear
+   54  python app.py
+   55  clear
+   56  python app.py
+   57  clear
+   58  python app.py
+   59  clear
+   60  python app.py
+   61  python app.py
+   62  python app.py
+   63  python app.py
+   64  python app.py
+   65  clear
+   66  python app.py
+   67  clear
+   68  python app.py
+   69  python app.py
+   70  clear
+   71  python app.py
+   72  clear
+   73  python app.py
+   74  python app.py
+   75  python app.py
+   76  python app.py
+   77  python app.py
+   78  cd ..
+   79  cd ..
+   80  cd Loan_Qualifier_Mod_2/
+   81  git add -A
+   82  git status
+   83  git commit -m "CSV file creater added for project."
+   84  git pull origin main
+   85  git push origin main
+   86  python app.py
+   87  ls
+   88  cd loan_qualifier_app/
+   89  ls
+   90  python app.py
+   91  python app.py
+   92  python app.py
+   93  python app.py
+   94  history 50 > terminal_history.txt
