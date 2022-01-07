@@ -29,7 +29,7 @@ def load_bank_data():
         The bank data from the data rate sheet CSV file.
     """
 
-    csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
+    csvpath = questionary.text("Enter the entire file path to a rate-sheet (.csv):").ask()
     csvpath = Path(csvpath)
     if not csvpath.exists():
         sys.exit(f"Oops! Can't find this path: {csvpath}")
@@ -83,7 +83,7 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     # Calculate the monthly debt ratio
     monthly_debt_ratio = calculate_monthly_debt_ratio(debt, income)
-    print(f"The monthly debt to income ratio is {monthly_debt_ratio:.02f}")
+    print(f"The monthly debt to income ratio is {monthly_debt_ratio:.02f}.")
 
     # Calculate loan to value ratio
     loan_to_value_ratio = calculate_loan_to_value_ratio(loan, home_value)
@@ -99,10 +99,10 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     #We are checking to see how many loans qualify based on the applicant data inputs. If no loans qualify program ends.
     number_of_qualifying_loans = len(bank_data_filtered)
     if number_of_qualifying_loans > 0:
-        print(f"Found {number_of_qualifying_loans} qualifying loans")
+        print(f"Found {number_of_qualifying_loans} qualifying loans.")
         #print(bank_data_filtered)
     else:
-        sys.exit("No qualifying loans were found! - System Exit")
+        sys.exit("No qualifying loans were found! - System Exit.")
     '''*******************************************************************************'''
     
 

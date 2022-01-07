@@ -1,6 +1,6 @@
-# Project Title
+# Jas's Loan Qualifier Extraordinaire
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+**This software runs, to determine the viability of the loan applicant. Taking applicants key metrics such as, credit score, loan size, debt to income ratio, and loan to value ratios into account the program determines banks that can provide loans to the applicant. It allows the user to download the applicant results into a CSV file for further evaluation.
 
 ---
 
@@ -8,26 +8,48 @@ Just after the title, introduce your project by describing attractively what the
 
 Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
 
+** The code is written in Python, using Visual Studio as a text editor and GitBash as the compiler/terminal. 
+* The libraries used in this project include Questionary and Fire were instituted for devoloping command line interfaces (CLI's) and generate user prompts. Libraries, CSV were used for importing and exporting csv data from and too files. The libraries sys was used to help python manipulate different parts of the run time enviroment. 
+
 ---
 
 ## Installation Guide
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+** Please PiP installs libraries Fire and Questionary to you choose enviroment. 
 
 ---
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+* 1) Please intiallize file app.py, as terminal command or in Gitbash/command prompt. 
+
+
+
+* 2) Enter the complete path of the .csv rate sheet. (See example below)
+
+
+
+* 3) Please enter customer data as per CLI prompts. (See example below)
+
+
+
+* 4) Once step 3 is completed you will be prompted and asked if you would like to save a .csv file with the results of the qualification process/program. If you choose No, the program will exit without saving and if answered yes, the program will ask for the save folder path and then prompt for the file name you wish to save as. 
+
+
+
+* 5) If answered Yes, the file will save the new file as a .csv file and exit the program. 
+
+
+
 
 ---
 
 ## Contributors
 
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.
+This program was devoloped with base code devoloped by the Rice-boot-camp. The code was added to by Jas Pinglia and modularized. 
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify what others can and can't with your source code and files. Use this section to include the license you want to use.
+License for this project and associated file is public.
