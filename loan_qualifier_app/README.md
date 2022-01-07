@@ -1,12 +1,10 @@
 # Jas's Loan Qualifier Extraordinaire
 
-**This software runs, to determine the viability of the loan applicant. Taking applicants key metrics such as, credit score, loan size, debt to income ratio, and loan to value ratios into account the program determines banks that can provide loans to the applicant. It allows the user to download the applicant results into a CSV file for further evaluation.
+** This software runs, to determine the viability of the loan applicant. Taking applicants key metrics such as, credit score, loan size, debt to income ratio, and loan to value ratios into account the program determines banks that can provide loans to the applicant. It allows the user to download the applicant results into a CSV file for further evaluation.
 
 ---
 
 ## Technologies
-
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
 
 ** The code is written in Python, using Visual Studio as a text editor and GitBash as the compiler/terminal. 
 * The libraries used in this project include Questionary and Fire were instituted for devoloping command line interfaces (CLI's) and generate user prompts. Libraries, CSV were used for importing and exporting csv data from and too files. The libraries sys was used to help python manipulate different parts of the run time enviroment. 
