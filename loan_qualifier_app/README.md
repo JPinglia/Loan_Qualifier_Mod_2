@@ -6,7 +6,7 @@
 
 ## Technologies
 
-** The code is written in Python, using Visual Studio as a text editor and GitBash as the compiler/terminal. 
+**The code is written in Python, using Visual Studio as a text editor and GitBash as the compiler/terminal.** 
 
 *The libraries used in this project include Questionary and Fire were instituted for devoloping command line interfaces (CLI's) and generate user prompts. Libraries, CSV were used for importing and exporting csv data from and too files. The libraries sys was used to help python manipulate different parts of the run time enviroment.*
 
