@@ -38,11 +38,11 @@
 
 ![image_4_csv_save_yes](https://user-images.githubusercontent.com/95830866/148705081-1c402c19-4d01-4603-b595-c4803e5fb8b4.PNG)
 
-5a. If answered Yes, the file will save the new file as a .csv file and exit the program. The program will ask for the save folder path and then prompt for the file name you wish to save as. 
+5. If answered Yes, the file will save the new file as a .csv file and exit the program. The program will ask for the save folder path and then prompt for the file name you wish to save as. 
 
 ![image_5_csv_save_yes_2](https://user-images.githubusercontent.com/95830866/148705084-128968d5-3e14-41b2-8521-42561e303df4.PNG)
 
-5b. If you choose No, the program will exit without saving
+6. If you choose No, the program will exit without saving
 
 ![image_6_csv_save_no](https://user-images.githubusercontent.com/95830866/148705089-da456025-7e41-48bf-bff5-915e602e872f.PNG)
 
