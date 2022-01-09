@@ -22,27 +22,27 @@
 
 ## Usage
 
-1) Please initialize file app.py, as terminal command or in Gitbash/command prompt. 
+1. Please initialize file app.py, as terminal command or in Gitbash/command prompt. 
 
 ![image_1_initialization](https://user-images.githubusercontent.com/95830866/148705039-87ebf7e9-dc54-4aa7-b7fd-1fe5b2b98621.PNG)
 
-2) Enter the complete path of the .csv rate sheet. (See example below)
+2. Enter the complete path of the .csv rate sheet. (See example below)
 
 ![image_2_complete_path](https://user-images.githubusercontent.com/95830866/148705052-a15618b8-0637-4df9-9875-b1cadb233560.PNG)
 
-3) Please enter customer data as per CLI prompts. (See example below)
+3. Please enter customer data as per CLI prompts. (See example below)
 
 ![image_3_customer_specifics](https://user-images.githubusercontent.com/95830866/148705061-722d9239-3b7b-400e-b679-becf4c95ac75.PNG)
 
-4) Once step 3 is completed you will be prompted and asked if you would like to save a .csv file with the results of the qualification process/program.  
+4. Once step 3 is completed you will be prompted and asked if you would like to save a .csv file with the results of the qualification process/program.  
 
 ![image_4_csv_save_yes](https://user-images.githubusercontent.com/95830866/148705081-1c402c19-4d01-4603-b595-c4803e5fb8b4.PNG)
 
-5a) If answered Yes, the file will save the new file as a .csv file and exit the program. The program will ask for the save folder path and then prompt for the file name you wish to save as. 
+5a. If answered Yes, the file will save the new file as a .csv file and exit the program. The program will ask for the save folder path and then prompt for the file name you wish to save as. 
 
 ![image_5_csv_save_yes_2](https://user-images.githubusercontent.com/95830866/148705084-128968d5-3e14-41b2-8521-42561e303df4.PNG)
 
-5b) If you choose No, the program will exit without saving
+5b. If you choose No, the program will exit without saving
 
 ![image_6_csv_save_no](https://user-images.githubusercontent.com/95830866/148705089-da456025-7e41-48bf-bff5-915e602e872f.PNG)
 
