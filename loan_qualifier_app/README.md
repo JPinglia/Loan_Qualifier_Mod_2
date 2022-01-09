@@ -19,8 +19,14 @@
 - Fire
 
 ---
+## Program Decision Tree
+
+![program_decision_tree](https://user-images.githubusercontent.com/95830866/148706208-35987cfa-878d-46b8-9a82-e7e000005cb6.PNG)
 
 ## Usage
+
+**Program logic and usage tree.**
+![program_usage_tree](https://user-images.githubusercontent.com/95830866/148706217-39be67d1-afb1-4c57-948d-52bb0afb0f2b.PNG)
 
 1. Please initialize file app.py, as terminal command or in Gitbash/command prompt. 
 
