@@ -8,7 +8,7 @@
 
 **The code is written in Python, using Visual Studio as a text editor and GitBash as the compiler/terminal.** 
 
-*The libraries used in this project include Questionary and Fire were instituted for devoloping command line interfaces (CLI's) and generate user prompts. Libraries, CSV were used for importing and exporting csv data from and too files. The libraries sys was used to help python manipulate different parts of the run time enviroment.*
+*The libraries used in this project include Questionary and Fire were instituted for developing command line interfaces (CLI's) and generate user prompts. Libraries, CSV were used for importing and exporting csv data from and too files. The libraries sys was used to help python manipulate different parts of the run time environment.*
 
 ---
 
@@ -50,7 +50,7 @@
 
 ## Contributors
 
-This program was devoloped with base code devoloped by the Rice-boot-camp. The code was added to by Jas Pinglia and modularized. 
+This program was developed with base code developed by the Rice-boot-camp. The code was added to by Jas Pinglia and modularized. 
 
 ---
 
